@@ -3,4 +3,6 @@ for (let i = 0; i < 256; i++) {
     const box = document.createElement('div');
     box.classList.add('grid');
     container.appendChild(box);
+    box.addEventListener('mouseover', () =>
+        box.setAttribute('style', 'background: blue'))
 }
