@@ -1,15 +1,18 @@
-const container = document.querySelector('.container');
+const container = document.querySelector('#container');
 const resize = document.querySelector('button');
 let side = 16;
 draw(side);
 resize.addEventListener('click', () => {
-    side = prompt("How many squares per side would you like? (Limit 100)");
+    side = parseInt(prompt("How many squares per side would you like? (Limit 100)"));
     if (side > 100) {
-        prompt("Max length is 100. Please enter a number less than or equal to 100.")
+        side = parseInt(prompt("Max length is 100. Please enter a number less than or equal to 100."));
     }
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
+    let cont_width = side + 2;
+    console.log(cont_width)
+    document.getElementById('container').style.width = cont_width + "rem";
     draw(side);
 })
 
