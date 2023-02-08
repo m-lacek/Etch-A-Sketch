@@ -9,4 +9,5 @@
     width: 2rem;
     height: 2rem;
     border: 1px solid rgb(165, 165, 174);
+    transform: scale(1);
 }

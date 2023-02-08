@@ -5,7 +5,10 @@ draw(side);
 resize.addEventListener('click', () => {
     side = prompt("How many squares per side would you like? (Limit 100)");
     if (side > 100) {
-        side = prompt("Max length is 100. Please enter a number less than or equal to 100.")
+        prompt("Max length is 100. Please enter a number less than or equal to 100.")
+    }
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
     }
     draw(side);
 })
