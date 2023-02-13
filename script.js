@@ -10,20 +10,19 @@ resize.addEventListener('click', () => {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
-    let cont_width = side + 2;
-    console.log(cont_width)
-    document.getElementById('container').style.width = cont_width + "rem";
     draw(side);
 })
 
 function draw(side) {
     const totalSize = side * side;
+    let boxWidth = Math.round(500 / side); //over 36/side does not work
 
     for (let i = 0; i < totalSize; i++) {
         const box = document.createElement('div');
+        box.style.width = boxWidth + "px";
         box.classList.add('grid');
         container.appendChild(box);
         box.addEventListener('mouseover', () =>
-            box.setAttribute('style', 'background: blue'))
+            box.style.backgroundColor = 'blue')
     }
 }
