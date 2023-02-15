@@ -15,11 +15,12 @@ resize.addEventListener('click', () => {
 
 function draw(side) {
     const totalSize = side * side;
-    let boxWidth = Math.round(500 / side); //over 36/side does not work
+    let boxWidth = (550 / side) - 1.6;
 
     for (let i = 0; i < totalSize; i++) {
         const box = document.createElement('div');
         box.style.width = boxWidth + "px";
+        box.style.height = boxWidth + "px";
         box.classList.add('grid');
         container.appendChild(box);
         box.addEventListener('mouseover', () =>
