@@ -1,17 +1,20 @@
-const container = document.querySelector('#container');
-const resize = document.querySelector('button');
+const container = document.querySelector("#container");
+const slider = document.getElementById("myRange");
+const output = document.getElementById("size")
+
 let side = 16;
 draw(side);
-resize.addEventListener('click', () => {
-    side = parseInt(prompt("How many squares per side would you like? (Limit 100)"));
-    if (side > 100) {
-        alert("Max length is 100. Please enter a number less than or equal to 100.");
-    }
+
+output.textContent = slider.value;
+
+slider.oninput = function () {
+    output.textContent = this.value;
+    side = this.value;
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
     draw(side);
-})
+}
 
 function draw(side) {
     const totalSize = side * side;
