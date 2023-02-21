@@ -26,6 +26,15 @@ body {
 
 .slidecontainer {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+#size {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
 }
 
 .slider {
