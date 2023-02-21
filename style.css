@@ -12,15 +12,13 @@ body {
 }
 
 #container {
-    display: flex;
+    display: grid;
     width: 550px;
     height: 550px;
-    flex-wrap: wrap;
-    border: solid 1px black;
+    border: solid 6px black;
 }
 
 .grid {
-    display: flex;
     border: 1px solid rgb(165, 165, 174);
     padding: 0;
     margin: 0;

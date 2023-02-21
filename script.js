@@ -18,12 +18,10 @@ slider.oninput = function () {
 
 function draw(side) {
     const totalSize = side * side;
-    let boxWidth = (550 / side) - 1.6;
 
     for (let i = 0; i < totalSize; i++) {
         const box = document.createElement('div');
-        box.style.width = boxWidth + "px";
-        box.style.height = boxWidth + "px";
+        container.setAttribute('style', `grid-template-columns: repeat(${side}, 1fr); grid-template-rows: repeat(${side}, 1fr)`)
         box.classList.add('grid');
         container.appendChild(box);
         box.addEventListener('mouseover', () =>
