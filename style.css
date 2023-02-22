@@ -39,4 +39,12 @@ body {
 
 .slider {
     width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.buttoncontainer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
 }
