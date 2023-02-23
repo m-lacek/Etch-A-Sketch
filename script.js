@@ -1,6 +1,8 @@
 const container = document.querySelector("#container");
 const slider = document.getElementById("myRange");
-const output = document.getElementById("size")
+const output = document.getElementById("size");
+const gridButton = document.querySelector("#grid");
+let previousGridSetting = "OFF";
 
 let side = 16;
 draw(side);
@@ -27,4 +29,34 @@ function draw(side) {
         box.addEventListener('mouseover', () =>
             box.style.backgroundColor = 'blue')
     }
+    if (previousGridSetting === "ON") {
+        toggleGrid()
+    }
 }
+
+gridButton.addEventListener("click", () => toggleGrid());
+
+function toggleGrid() {
+    const gridBox = document.getElementsByClassName("grid");
+    if (gridBox[0].style.border == "") {
+        for (let i = 0; i < gridBox.length; i++) {
+            gridBox[i].style.border = "1px solid grey";
+        }
+        previousGridSetting = "ON";
+    }
+    else {
+        for (let i = 0; i < gridBox.length; i++) {
+            gridBox[i].style.border = "";
+        }
+        previousGridSetting = "OFF";
+    }
+}
+
+
+
+
+
+
+
+
+
