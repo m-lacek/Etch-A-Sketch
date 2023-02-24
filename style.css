@@ -73,17 +73,26 @@ h1 {
     padding: 12px 20px;
 }
 
-#grid:hover {
+#grid:hover,
+#clear:hover,
+#erase:hover,
+#color:hover {
     background-color: rgb(212, 156, 14);
 }
 
-#grid:active {
+#grid:active,
+#clear:active,
+#erase:active,
+#color:active {
     background-color: rgb(212, 156, 14);
     box-shadow: 0 5px #666;
     transform: translateY(4px)
 }
 
-#grid {
+#grid,
+#clear,
+#erase,
+#color {
     background-color: rgb(255, 183, 0);
     box-shadow: 0 9px #999;
     border-radius: 15px;
