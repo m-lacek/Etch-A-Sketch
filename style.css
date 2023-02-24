@@ -4,6 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     width: auto;
+    background-color: chocolate;
 }
 
 #gridAndSlider {
@@ -16,6 +17,7 @@ body {
     width: 550px;
     height: 550px;
     border: solid 6px black;
+    background-color: white;
 }
 
 .grid {
@@ -46,4 +48,24 @@ body {
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
+}
+
+.button {
+    padding: 15px 25px;
+}
+
+#grid:hover {
+    background-color: rgb(223, 7, 68);
+}
+
+#grid:active {
+    background-color: rgb(223, 7, 68);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px)
+}
+
+#grid {
+    background-color: rgb(254, 0, 72);
+    box-shadow: 0 9px #999;
+    border-radius: 15px;
 }
