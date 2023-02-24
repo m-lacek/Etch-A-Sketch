@@ -3,6 +3,7 @@ const slider = document.getElementById("myRange");
 const output = document.getElementById("size");
 const gridButton = document.querySelector("#grid");
 let previousGridSetting = "OFF";
+const clearButton = document.querySelector("#clear");
 
 let side = 16;
 draw(side);
@@ -51,6 +52,13 @@ function toggleGrid() {
         previousGridSetting = "OFF";
     }
 }
+
+clearButton.addEventListener("click", () => {
+    const gridBox = document.getElementsByClassName("grid");
+    for (let i = 0; i < gridBox.length; i++) {
+        gridBox[i].style.backgroundColor = "white";
+    }
+})
 
 
 
