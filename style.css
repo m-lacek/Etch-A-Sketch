@@ -1,3 +1,14 @@
+@font-face {
+    font-family: Simple-Thread;
+    src: url(font/SimpleThread_PERSONAL_USE_ONLY.otf);
+}
+
+@font-face {
+    font-family: Enter-The-Grid;
+    src: url(font/Enter\ the\ Grid.ttf);
+}
+
+
 body {
     display: flex;
     justify-content: center;
@@ -5,6 +16,13 @@ body {
     height: 100vh;
     width: auto;
     background-color: chocolate;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: Simple-Thread, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    margin-bottom: 15px;
 }
 
 #gridAndSlider {
@@ -48,24 +66,28 @@ body {
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
+    padding-bottom: 15px;
 }
 
 .button {
-    padding: 15px 25px;
+    padding: 12px 20px;
 }
 
 #grid:hover {
-    background-color: rgb(223, 7, 68);
+    background-color: rgb(212, 156, 14);
 }
 
 #grid:active {
-    background-color: rgb(223, 7, 68);
+    background-color: rgb(212, 156, 14);
     box-shadow: 0 5px #666;
     transform: translateY(4px)
 }
 
 #grid {
-    background-color: rgb(254, 0, 72);
+    background-color: rgb(255, 183, 0);
     box-shadow: 0 9px #999;
     border-radius: 15px;
+    border: none;
+    font-family: Enter-The-Grid, 'Times New Roman', Times, serif;
+    font-size: 16px;
 }
