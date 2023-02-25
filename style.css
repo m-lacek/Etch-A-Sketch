@@ -23,6 +23,7 @@ h1 {
     font-family: Simple-Thread, 'Times New Roman', Times, serif;
     font-size: 50px;
     margin-bottom: 15px;
+    padding-top: 20px;
 }
 
 #gridAndSlider {
@@ -32,8 +33,8 @@ h1 {
 
 #container {
     display: grid;
-    width: 550px;
-    height: 550px;
+    width: 650px;
+    height: 500px;
     border: solid 6px black;
     background-color: white;
 }
@@ -96,6 +97,26 @@ h1 {
     border: none;
     font-family: Enter-The-Grid, 'Times New Roman', Times, serif;
     font-size: 16px;
+}
+
+.right,
+.left {
+    display: flex;
+    gap: 5px;
+}
+
+#eraseContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#eraseText {
+    font-family: Enter-The-Grid, 'Times New Roman', Times, serif;
+    text-align: center;
+    background-color: rgb(255, 183, 0);
+    border-radius: 15px;
+    padding: 5px 18px 5px 18px;
 }
 
 .eraseSwitch {
