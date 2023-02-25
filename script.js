@@ -4,6 +4,7 @@ const output = document.getElementById("size");
 const gridButton = document.querySelector("#grid");
 let previousGridSetting = "OFF";
 const clearButton = document.querySelector("#clear");
+const eraseButton = document.querySelector("#erase");
 
 let side = 16;
 draw(side);
@@ -59,12 +60,5 @@ clearButton.addEventListener("click", () => {
         gridBox[i].style.backgroundColor = "white";
     }
 })
-
-
-
-
-
-
-
 
 

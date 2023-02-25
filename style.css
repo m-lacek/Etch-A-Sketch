@@ -15,7 +15,7 @@ body {
     align-items: center;
     height: 100vh;
     width: auto;
-    background-color: chocolate;
+    background-color: saddlebrown;
     flex-direction: column;
 }
 
@@ -75,14 +75,12 @@ h1 {
 
 #grid:hover,
 #clear:hover,
-#erase:hover,
 #color:hover {
     background-color: rgb(212, 156, 14);
 }
 
 #grid:active,
 #clear:active,
-#erase:active,
 #color:active {
     background-color: rgb(212, 156, 14);
     box-shadow: 0 5px #666;
@@ -91,7 +89,6 @@ h1 {
 
 #grid,
 #clear,
-#erase,
 #color {
     background-color: rgb(255, 183, 0);
     box-shadow: 0 9px #999;
@@ -99,4 +96,62 @@ h1 {
     border: none;
     font-family: Enter-The-Grid, 'Times New Roman', Times, serif;
     font-size: 16px;
+}
+
+.eraseSwitch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+}
+
+.eraseSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.eraseSlider {
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: -10px;
+    bottom: 0;
+    transition: .4s;
+    background-color: rgb(255, 183, 0);
+}
+
+.eraseSlider:before {
+    position: absolute;
+    content: "OFF";
+    text-align: center;
+    font-family: Enter-The-Grid, 'Times New Roman', Times, serif;
+    padding: 15px 5px 0px 5px;
+    height: 26px;
+    width: 34px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #999;
+    transition: .4s;
+}
+
+input:checked+.eraseSlider {
+    background-color: #fa0404;
+}
+
+input:focus+.eraseSlider {
+    box-shadow: 0 0 1px #fa0404;
+}
+
+input:checked+.eraseSlider:before {
+    transform: translateX(38px);
+    content: "ON";
+}
+
+.eraseSlider.round {
+    border-radius: 34px;
+}
+
+.eraseSlider.round:before {
+    border-radius: 50%;
 }
