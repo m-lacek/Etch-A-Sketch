@@ -4,7 +4,7 @@ const output = document.getElementById("size");
 const gridButton = document.querySelector("#grid");
 let previousGridSetting = "OFF";
 const clearButton = document.querySelector("#clear");
-const eraseButton = document.querySelector("#erase");
+const eraseSwitch = document.querySelector("input[type='checkbox']");
 
 let side = 16;
 draw(side);
@@ -28,12 +28,28 @@ function draw(side) {
         container.setAttribute('style', `grid-template-columns: repeat(${side}, 1fr); grid-template-rows: repeat(${side}, 1fr)`)
         box.classList.add('grid');
         container.appendChild(box);
-        box.addEventListener('mouseover', () =>
-            box.style.backgroundColor = 'blue')
     }
     if (previousGridSetting === "ON") {
         toggleGrid()
     }
+    color();
+}
+
+function color() {
+    const boxes = document.querySelectorAll(".grid");
+
+    boxes.forEach(box => {
+        box.addEventListener("mouseover", () => box.style.backgroundColor = "blue");
+
+        eraseSwitch.addEventListener("change", function () {
+            if (eraseSwitch.checked) {
+                box.addEventListener("mouseover", () => box.style.backgroundColor = "white");
+            }
+            else {
+                box.addEventListener('mouseover', () => box.style.backgroundColor = "blue");
+            }
+        });
+    });
 }
 
 gridButton.addEventListener("click", () => toggleGrid());
@@ -60,5 +76,3 @@ clearButton.addEventListener("click", () => {
         gridBox[i].style.backgroundColor = "white";
     }
 })
-
-
