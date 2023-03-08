@@ -76,3 +76,4 @@ clearButton.addEventListener("click", () => {
         gridBox[i].style.backgroundColor = "white";
     }
 })
+

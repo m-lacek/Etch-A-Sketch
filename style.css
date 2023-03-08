@@ -70,27 +70,35 @@ h1 {
     padding-bottom: 15px;
 }
 
+.colorContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 0fr);
+}
+
 .button {
     padding: 12px 20px;
 }
 
+.colorButton {
+    width: 25px;
+    height: 25px;
+}
+
 #grid:hover,
-#clear:hover,
-#color:hover {
+#clear:hover {
     background-color: rgb(212, 156, 14);
 }
 
 #grid:active,
-#clear:active,
-#color:active {
+#clear:active {
     background-color: rgb(212, 156, 14);
     box-shadow: 0 5px #666;
     transform: translateY(4px)
 }
 
 #grid,
-#clear,
-#color {
+#clear {
     background-color: rgb(255, 183, 0);
     box-shadow: 0 9px #999;
     border-radius: 15px;
