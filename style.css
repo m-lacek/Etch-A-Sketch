@@ -85,6 +85,70 @@ h1 {
     height: 20px;
 }
 
+#red {
+    background-color: red;
+}
+
+#red:active {
+    background-color: rgb(198, 3, 3);
+}
+
+#blue {
+    background-color: blue;
+}
+
+#blue:active {
+    background-color: rgb(3, 3, 198);
+}
+
+#green {
+    background-color: green;
+}
+
+#green:active {
+    background-color: rgb(1, 94, 1);
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#yellow:active {
+    background-color: rgb(198, 198, 3);
+}
+
+#purple {
+    background-color: purple;
+}
+
+#purple:active {
+    background-color: rgb(94, 1, 94);
+}
+
+#orange {
+    background-color: orange;
+}
+
+#orange:active {
+    background-color: rgb(198, 129, 2);
+}
+
+#pink {
+    background-color: pink;
+}
+
+#pink:active {
+    background-color: rgb(193, 147, 155);
+}
+
+#grey {
+    background-color: grey;
+}
+
+#grey:active {
+    background-color: rgb(91, 90, 90);
+}
+
 #grid:hover,
 #clear:hover {
     background-color: rgb(212, 156, 14);
