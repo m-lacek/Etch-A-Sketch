@@ -41,7 +41,15 @@ function color() {
     let boxColor = "blue"
     colorButtons.forEach(colorButton => {
         colorButton.addEventListener("click", () => {
-            boxColor = colorButton.id;
+            if (colorButton.id == "random") {
+                let r = Math.floor((Math.random() * 256) + 1);
+                let g = Math.floor((Math.random() * 256) + 1);
+                let b = Math.floor((Math.random() * 256) + 1);
+                boxColor = `rgb(${r}, ${g}, ${b})`;
+            }
+            else {
+                boxColor = colorButton.id;
+            }
         })
     })
 
