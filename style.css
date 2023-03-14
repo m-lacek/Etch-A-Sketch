@@ -15,7 +15,7 @@ body {
     align-items: center;
     height: 100vh;
     width: auto;
-    background-color: saddlebrown;
+    background-color: #13728b;
     flex-direction: column;
 }
 
@@ -70,7 +70,7 @@ h1 {
     padding-bottom: 15px;
 }
 
-.colorContainer {
+.colorButtonContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 0fr);
@@ -82,7 +82,7 @@ h1 {
 
 .colorButton {
     width: 25px;
-    height: 25px;
+    height: 20px;
 }
 
 #grid:hover,

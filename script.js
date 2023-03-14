@@ -37,9 +37,16 @@ function draw(side) {
 
 function color() {
     const boxes = document.querySelectorAll(".grid");
+    const colorButtons = document.querySelectorAll(".colorButton")
+    let boxColor = "blue"
+    colorButtons.forEach(colorButton => {
+        colorButton.addEventListener("click", () => {
+            boxColor = colorButton.id;
+        })
+    })
 
     boxes.forEach(box => {
-        box.addEventListener("mouseover", () => box.style.backgroundColor = "blue");
+        box.addEventListener("mouseover", () => box.style.backgroundColor = boxColor);
 
         eraseSwitch.addEventListener("change", function () {
             if (eraseSwitch.checked) {
@@ -76,4 +83,3 @@ clearButton.addEventListener("click", () => {
         gridBox[i].style.backgroundColor = "white";
     }
 })
-
