@@ -9,15 +9,17 @@ const eraseSwitch = document.querySelector("input[type='checkbox']");
 let side = 16;
 draw(side);
 
-output.textContent = slider.value;
+output.textContent = `${slider.value} x ${slider.value}`;
 
 slider.oninput = function () {
-    output.textContent = this.value;
-    side = this.value;
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
-    draw(side);
+    slider.addEventListener('mouseup', function () {
+        output.textContent = `${this.value} x ${this.value}`;
+        side = this.value;
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        draw(side)
+    });
 }
 
 function draw(side) {
@@ -38,7 +40,14 @@ function draw(side) {
 function color() {
     const boxes = document.querySelectorAll(".grid");
     const colorButtons = document.querySelectorAll(".colorButton")
-    let boxColor = "blue"
+    let boxColor = "blue";
+
+    eraseSwitch.addEventListener("change", function () {
+        if (eraseSwitch.checked) {
+            boxColor = "white";
+        }
+    });
+
     colorButtons.forEach(colorButton => {
         colorButton.addEventListener("click", () => {
             if (colorButton.id == "random") {
@@ -47,6 +56,7 @@ function color() {
                 let b = Math.floor((Math.random() * 256) + 1);
                 boxColor = `rgb(${r}, ${g}, ${b})`;
             }
+
             else {
                 boxColor = colorButton.id;
             }
@@ -55,16 +65,8 @@ function color() {
 
     boxes.forEach(box => {
         box.addEventListener("mouseover", () => box.style.backgroundColor = boxColor);
-
-        eraseSwitch.addEventListener("change", function () {
-            if (eraseSwitch.checked) {
-                box.addEventListener("mouseover", () => box.style.backgroundColor = "white");
-            }
-            else {
-                box.addEventListener('mouseover', () => box.style.backgroundColor = "blue");
-            }
-        });
     });
+
 }
 
 gridButton.addEventListener("click", () => toggleGrid());
